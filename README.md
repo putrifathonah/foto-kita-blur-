@@ -1,49 +1,71 @@
-# Peace Blur Camera
+# Foto Kita Blur
 
-A desktop Python application that blurs the webcam feed by default and unblurs when a Peace Gesture (✌️) is detected.
+Foto Kita Blur adalah aplikasi sederhana berbasis Python yang dapat memberikan efek blur pada wajah secara real-time menggunakan webcam. Aplikasi ini memanfaatkan OpenCV untuk pengolahan citra dan MediaPipe untuk mendeteksi gesture tangan.
 
-## Requirements
+## Fitur
 
-- Python 3.12
+- Blur wajah secara real-time
+- Deteksi gesture tangan (Peace Sign ✌️)
+- Mengaktifkan atau menonaktifkan blur menggunakan gesture
+- Menggunakan webcam secara langsung
+
+## Teknologi
+
+- Python
 - OpenCV
 - MediaPipe
 - NumPy
 
-## Install
+## Instalasi
 
-1. Create a virtual environment (recommended):
+Clone repository ini.
 
-```powershell
-python -m venv .venv
-.\.venv\Scripts\activate
+```bash
+git clone https://github.com/putrifathonah/foto-kita-blur-.git
+cd foto-kita-blur-
 ```
 
-2. Install dependencies:
+Install semua dependency.
 
-```powershell
+```bash
 pip install -r requirements.txt
 ```
 
-## Run
+Jalankan program.
 
-Use the included `run.bat` (Windows) or run directly:
-
-```powershell
-python main.py
+```bash
+python blur.py
 ```
 
-## Controls
+## Cara Menggunakan
 
-- `ESC`: Exit
-- `L`: Toggle landmarks
-- `B`: Toggle blur on/off
-- `1`: Low blur
-- `2`: Medium blur
-- `3`: High blur
-- `S`: Screenshot (saved to `outputs/`)
-- `R`: Toggle recording (saved to `outputs/`)
+1. Jalankan aplikasi.
+2. Izinkan webcam menyala.
+3. Arahkan wajah ke kamera.
+4. Gunakan gesture Peace Sign (✌️) untuk mengontrol blur.
+5. Tekan `Q` untuk menutup aplikasi.
 
-## Notes
+## Struktur Project
 
-- If the webcam cannot be opened, confirm no other app is using it and that drivers are installed.
-- MediaPipe may require specific platform wheels; if installation fails, consult MediaPipe installation docs.
+```
+foto-kita-blur/
+├── blur.py
+├── requirements.txt
+└── README.md
+```
+
+## Catatan
+
+Jika muncul error seperti berikut:
+
+```text
+AttributeError: module 'mediapipe' has no attribute 'solutions'
+```
+
+Pastikan menggunakan virtual environment dan MediaPipe sudah terpasang dengan benar.
+
+## Author
+
+Putri Fathonah
+
+GitHub: https://github.com/putrifathonah
